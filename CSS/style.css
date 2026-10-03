@@ -1,0 +1,913 @@
+
+        /* Selector universal (*): aplica a TODOS los elementos de la página */
+        * {
+            margin: 0;               /* Elimina los márgenes por defecto que trae el navegador */
+            padding: 0;              /* Elimina los rellenos por defecto que trae el navegador */
+            box-sizing: border-box;  /* Hace que el padding y border se cuenten DENTRO del ancho/alto del elemento */
+        }
+
+        /* Aplica al elemento raíz <html> */
+        html {
+            scroll-behavior: smooth; /* Hace que el scroll al hacer clic en anclas (#inicio, #vehiculos...) sea suave */
+        }
+
+        /* Estilos base del <body>, se heredan a toda la página */
+        body {
+            font-family: 'Inter', sans-serif; /* Fuente principal de todo el sitio (con respaldo sans-serif) */
+            background: #080808;              /* Color de fondo negro casi puro */
+            color: #fff;                      /* Color de texto por defecto: blanco */
+            overflow-x: hidden;               /* Evita el scroll horizontal (barra lateral abajo) */
+        }
+
+        /* :root apunta al elemento <html> y se usa para declarar VARIABLES CSS globales */
+        :root {
+            --gold: #d4af37;         /* Variable: color dorado principal */
+            --gold-light: #f2d675;   /* Variable: dorado más claro (usado en hover) */
+            --black: #080808;        /* Variable: negro base */
+            --dark: #111111;         /* Variable: gris muy oscuro */
+            --gray: #999;            /* Variable: gris medio (para textos secundarios) */
+            --white: #ffffff;        /* Variable: blanco */
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        /* Estilos del <header> (barra superior fija) */
+        header {
+            position: fixed;         /* Fija la barra en la pantalla, no se mueve al hacer scroll */
+            top: 0;                  /* Pegada al borde superior */
+            left: 0;                 /* Pegada al borde izquierdo */
+            width: 100%;             /* Ocupa todo el ancho de la pantalla */
+            z-index: 1000;           /* Se muestra por encima de casi todo lo demás */
+
+            background: rgba(5,5,5,.88);       /* Fondo negro con 88% de opacidad (semi-transparente) */
+            backdrop-filter: blur(15px);       /* Aplica un desenfoque al contenido que está DETRÁS de la barra */
+
+            border-bottom: 1px solid rgba(212,175,55,.15); /* Línea dorada muy sutil abajo */
+        }
+
+        /* Contenedor <nav> del menú */
+        nav {
+            max-width: 1250px;              /* Ancho máximo del menú */
+            margin: auto;                    /* Centra el menú horizontalmente */
+
+            height: 80px;                    /* Altura fija de la barra */
+
+            display: flex;                   /* Activa Flexbox para alinear logo y enlaces en fila */
+            align-items: center;             /* Centra verticalmente los hijos */
+            justify-content: space-between;  /* Empuja logo a la izquierda y menú a la derecha */
+
+            padding: 0 25px;                 /* Espacio interno a los lados */
+        }
+
+        /* Contenedor del logo (ASJ.MOTORS) */
+        .logo {
+            font-family: 'Montserrat', sans-serif; /* Cambia la fuente a Montserrat */
+            font-size: 27px;                       /* Tamaño del texto del logo */
+            font-weight: 900;                      /* Grosor máximo (negrita fuerte) */
+            letter-spacing: 2px;                   /* Espacio entre letras */
+        }
+
+        /* Estiliza el <span> que envuelve el punto del logo */
+        .logo span {
+            color: var(--gold);       /* Usa la variable dorada, hace el punto de color dorado */
+        }
+
+        /* Lista <ul> que contiene los enlaces del menú */
+        .nav-links {
+            display: flex;             /* Coloca los <li> en fila horizontal */
+            gap: 35px;                 /* Espacio de 35px entre cada enlace */
+            list-style: none;          /* Quita las viñetas de la lista */
+        }
+
+        /* Estilo de los enlaces <a> dentro del menú */
+        .nav-links a {
+            color: white;                  /* Color blanco */
+            text-decoration: none;         /* Quita el subrayado */
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: .3s;               /* Anima cualquier cambio (por ejemplo color) durante 0.3s */
+        }
+
+        /* Efecto al pasar el mouse por encima de un enlace */
+        .nav-links a:hover {
+            color: var(--gold);            /* Cambia a dorado al hacer hover */
+        }
+
+        /* Botón especial del menú "VER VEHÍCULOS" */
+        .nav-button {
+            background: var(--gold);       /* Fondo dorado */
+            color: #000 !important;        /* Texto negro. !important fuerza este color aunque haya otras reglas */
+
+            padding: 12px 20px;            /* Relleno interno */
+
+            border-radius: 4px;            /* Esquinas ligeramente redondeadas */
+
+            font-weight: 800 !important;   /* Grosor muy fuerte, forzado */
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        /* Sección principal (hero) con imagen de fondo */
+        .hero {
+            min-height: 100vh;             /* Altura mínima = 100% del alto de la pantalla */
+
+            display: flex;                 /* Flexbox para centrar el contenido */
+            align-items: center;           /* Centra verticalmente el contenido */
+
+            position: relative;            /* Permite posicionar elementos hijos con position:absolute */
+
+            background:
+                linear-gradient(           /* Degradado oscuro encima de la imagen para que se lea el texto */
+                    90deg,
+                    rgba(0,0,0,.95) 0%,    /* Muy oscuro a la izquierda */
+                    rgba(0,0,0,.7) 45%,    /* Menos oscuro al centro */
+                    rgba(0,0,0,.25) 100%   /* Casi transparente a la derecha */
+                ),
+
+                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90"); /* Imagen de fondo */
+
+            background-size: cover;          /* La imagen cubre todo el área */
+            background-position: center;     /* La imagen se centra */
+        }
+
+        /* Contenedor del contenido del hero (textos y botones) */
+        .hero-content {
+            max-width: 1250px;             /* Ancho máximo */
+            width: 100%;
+
+            margin: auto;                  /* Centra horizontalmente */
+
+            padding: 130px 25px 70px;      /* Espacio arriba/abajo (deja espacio para el navbar fijo) */
+        }
+
+        /* Texto pequeño superior "ASJ MOTORS" */
+        .hero-small {
+            color: var(--gold);            /* Color dorado */
+
+            font-size: 14px;
+            font-weight: 800;
+
+            letter-spacing: 4px;           /* Letras muy espaciadas (estilo elegante) */
+
+            margin-bottom: 20px;
+        }
+
+        /* Título principal <h1> dentro del hero */
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: clamp(45px, 7vw, 88px); /* Tamaño responsive: mínimo 45px, ideal 7% del ancho, máximo 88px */
+
+            line-height: .95;              /* Espacio entre líneas muy ajustado */
+
+            max-width: 800px;              /* No pasa de 800px de ancho */
+
+            margin-bottom: 30px;
+        }
+
+        /* Estilo del <span> dentro del h1 (la palabra "VEHÍCULO") */
+        .hero h1 span {
+            color: var(--gold);            /* La palabra destacada va en dorado */
+        }
+
+        /* Párrafo descriptivo del hero */
+        .hero p {
+            max-width: 600px;              /* Limita el ancho para que sea legible */
+
+            color: #d0d0d0;                /* Gris claro */
+
+            font-size: 18px;
+            line-height: 1.7;              /* Espacio entre líneas cómodo para leer */
+
+            margin-bottom: 35px;
+        }
+
+        /* Contenedor de los botones del hero */
+        .hero-buttons {
+            display: flex;                 /* Coloca los botones en fila */
+            gap: 15px;                     /* Espacio entre botones */
+            flex-wrap: wrap;               /* Si no caben, saltan a la siguiente línea */
+        }
+
+        /* Estilo base para TODOS los botones .btn */
+        .btn {
+            display: inline-block;         /* Permite darle padding y tamaño aunque sea un <a> */
+
+            padding: 15px 28px;
+
+            text-decoration: none;         /* Quita el subrayado */
+
+            font-weight: 800;
+
+            border-radius: 4px;            /* Esquinas ligeramente redondeadas */
+
+            transition: .3s;               /* Anima cambios (hover) */
+        }
+
+        /* Variante: botón dorado */
+        .btn-gold {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* Efecto hover del botón dorado */
+        .btn-gold:hover {
+            background: var(--gold-light);        /* Cambia a dorado más claro */
+            transform: translateY(-3px);          /* Sube 3px (efecto "levantarse") */
+        }
+
+        /* Variante: botón con solo borde (sin fondo) */
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.4); /* Borde blanco semi-transparente */
+            color: white;
+        }
+
+        /* Hover del botón con borde */
+        .btn-outline:hover {
+            border-color: var(--gold);     /* El borde cambia a dorado */
+            color: var(--gold);            /* El texto cambia a dorado */
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        /* Sección de estadísticas */
+        .stats {
+            background: #0d0d0d;           /* Fondo casi negro */
+
+            border-top: 1px solid rgba(212,175,55,.15);    /* Línea dorada muy sutil arriba */
+            border-bottom: 1px solid rgba(212,175,55,.15); /* Línea dorada muy sutil abajo */
+        }
+
+        /* Contenedor interno de las estadísticas */
+        .stats-container {
+            max-width: 1100px;
+
+            margin: auto;                  /* Centra horizontalmente */
+
+            display: grid;                                 /* Activa CSS Grid */
+            grid-template-columns: repeat(4,1fr);          /* 4 columnas de igual tamaño */
+
+            padding: 35px 20px;
+        }
+
+        /* Cada bloque individual de estadística */
+        .stat {
+            text-align: center;            /* Centra el texto */
+
+            border-right: 1px solid #222;  /* Línea vertical divisoria a la derecha */
+        }
+
+        /* El último .stat no lleva línea divisoria a la derecha */
+        .stat:last-child {
+            border: none;
+        }
+
+        /* Número grande de cada estadística */
+        .stat h3 {
+            color: var(--gold);            /* Dorado */
+
+            font-size: 30px;
+
+            margin-bottom: 5px;
+        }
+
+        /* Descripción bajo el número */
+        .stat p {
+            color: #888;                   /* Gris */
+            font-size: 13px;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        /* Estilo base para TODAS las <section> */
+        section {
+            padding: 100px 20px;           /* Espacio interno arriba/abajo generoso */
+        }
+
+        /* Contenedor genérico que limita el ancho y centra */
+        .container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        /* Encabezado que contiene tag + título + descripción */
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        /* Etiqueta pequeña arriba del título (ej: "Nuestro inventario") */
+        .section-tag {
+            color: var(--gold);            /* Dorado */
+
+            text-transform: uppercase;     /* Convierte todo a MAYÚSCULAS */
+
+            letter-spacing: 3px;           /* Espaciado entre letras */
+
+            font-size: 12px;
+            font-weight: 800;
+
+            margin-bottom: 12px;
+        }
+
+        /* Título principal de cada sección */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: clamp(32px, 5vw, 55px); /* Tamaño responsive: mín 32px, ideal 5vw, máx 55px */
+
+            margin-bottom: 15px;
+        }
+
+        /* Descripción bajo el título de sección */
+        .section-description {
+            color: #888;                   /* Gris */
+
+            max-width: 650px;              /* Ancho máximo para mejor lectura */
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FILTERS
+        ========================== */
+
+        /* Contenedor de los botones de filtro */
+        .filters {
+            display: flex;                 /* Botones en fila */
+
+            gap: 10px;                     /* Separación entre botones */
+
+            margin-bottom: 35px;
+
+            flex-wrap: wrap;               /* Saltan de línea si no caben */
+        }
+
+        /* Estilo base de cada botón de filtro */
+        .filter {
+            background: #141414;           /* Fondo oscuro */
+
+            border: 1px solid #292929;     /* Borde gris oscuro */
+
+            color: #aaa;                   /* Texto gris */
+
+            padding: 11px 20px;
+
+            cursor: pointer;               /* Muestra el cursor de mano al pasar */
+
+            border-radius: 3px;            /* Esquinas ligeramente redondeadas */
+
+            transition: .3s;               /* Anima el cambio de color */
+        }
+
+        /* Hover Y estado activo del filtro (se combinan con coma) */
+        .filter:hover,
+        .filter.active {
+            background: var(--gold);       /* Fondo dorado */
+            color: #000;                   /* Texto negro */
+            border-color: var(--gold);     /* Borde dorado */
+        }
+
+        /* =========================
+           VEHICLES
+        ========================== */
+
+        /* Contenedor cuadriculado de las tarjetas de vehículos */
+        .vehicles {
+            display: grid;                             /* Activa Grid */
+
+            grid-template-columns: repeat(3, 1fr);     /* 3 columnas iguales */
+
+            gap: 25px;                                 /* Espacio entre tarjetas */
+        }
+
+        /* Cada tarjeta <article class="vehicle"> */
+        .vehicle {
+            background: #111;              /* Fondo casi negro */
+
+            border: 1px solid #222;        /* Borde gris oscuro */
+
+            overflow: hidden;              /* Oculta lo que se salga (importante para el zoom de imagen) */
+
+            transition: .4s;               /* Anima el efecto hover */
+        }
+
+        /* Efecto al pasar el mouse por una tarjeta */
+        .vehicle:hover {
+            transform: translateY(-8px);           /* Se eleva 8px */
+
+            border-color: rgba(212,175,55,.5);     /* El borde se pone dorado semi-transparente */
+        }
+
+        /* Contenedor de la imagen del vehículo */
+        .vehicle-image {
+            height: 250px;                 /* Altura fija */
+
+            position: relative;            /* Permite posicionar la etiqueta con position:absolute */
+
+            overflow: hidden;              /* Oculta lo que se salga al hacer zoom */
+        }
+
+        /* La <img> dentro del contenedor */
+        .vehicle-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;             /* La imagen cubre el área sin deformarse */
+
+            transition: .6s;               /* Anima el zoom en 0.6s */
+        }
+
+        /* Al hacer hover en la tarjeta, la imagen se agranda */
+        .vehicle:hover img {
+            transform: scale(1.08);        /* Escala al 108% (zoom sutil) */
+        }
+
+        /* Etiqueta flotante sobre la imagen ("Destacado", "Nueva"...) */
+        .vehicle-tag {
+            position: absolute;            /* Se posiciona sobre la imagen */
+
+            top: 15px;                     /* A 15px del borde superior */
+            left: 15px;                    /* A 15px del borde izquierdo */
+
+            background: var(--gold);
+            color: #000;
+
+            padding: 7px 12px;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            text-transform: uppercase;     /* Texto en MAYÚSCULAS */
+        }
+
+        /* Contenedor de la info (nombre, precio, botón) */
+        .vehicle-info {
+            padding: 25px;                 /* Espacio interno */
+        }
+
+        /* Nombre del vehículo */
+        .vehicle-info h3 {
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+        /* Fila con detalles (año, transmisión, combustible) */
+        .vehicle-details {
+            display: flex;                 /* Los <span> en fila */
+
+            gap: 15px;                     /* Separación entre ellos */
+
+            color: #777;                   /* Gris */
+
+            font-size: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        /* Precio del vehículo */
+        .vehicle-price {
+            color: var(--gold);            /* Dorado */
+
+            font-size: 23px;
+            font-weight: 800;
+
+            margin-bottom: 20px;
+        }
+
+        /* Botón "ME INTERESA" */
+        .vehicle-button {
+            width: 100%;                   /* Ocupa todo el ancho de la tarjeta */
+
+            display: block;                /* Se comporta como bloque */
+
+            text-align: center;            /* Texto centrado */
+
+            border: 1px solid #333;        /* Borde gris */
+
+            color: white;
+
+            padding: 12px;
+
+            text-decoration: none;         /* Sin subrayado */
+
+            transition: .3s;               /* Animación en hover */
+        }
+
+        /* Hover del botón "ME INTERESA" */
+        .vehicle-button:hover {
+            background: var(--gold);       /* Fondo dorado */
+            color: #000;                   /* Texto negro */
+
+            border-color: var(--gold);
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        /* Sección de servicios */
+        .services {
+            background: #0d0d0d;           /* Fondo casi negro (diferente al body para separar) */
+        }
+
+        /* Cuadrícula de servicios */
+        .services-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr); /* 3 columnas iguales */
+
+            gap: 25px;
+        }
+
+        /* Cada tarjeta de servicio */
+        .service {
+            padding: 35px;                 /* Espacio interno */
+
+            background: #111;
+
+            border: 1px solid #222;
+
+            transition: .3s;
+        }
+
+        /* Hover de la tarjeta de servicio */
+        .service:hover {
+            border-color: var(--gold);             /* Borde dorado */
+            transform: translateY(-5px);           /* Se eleva 5px */
+        }
+
+        /* Ícono (emoji) del servicio */
+        .service-icon {
+            font-size: 35px;               /* Emoji grande */
+
+            margin-bottom: 25px;
+        }
+
+        /* Título del servicio */
+        .service h3 {
+            font-family: 'Montserrat', sans-serif;
+
+            margin-bottom: 12px;
+        }
+
+        /* Descripción del servicio */
+        .service p {
+            color: #777;                   /* Gris */
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        /* Sección "Nosotros" con dos columnas (imagen + texto) */
+        .about {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+
+            gap: 70px;                      /* Separación entre columnas */
+
+            align-items: center;            /* Centra verticalmente */
+        }
+
+        /* Imagen (div con background-image) del bloque about */
+        .about-image {
+            height: 550px;                  /* Altura fija */
+
+            background:
+                url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=90");
+
+            background-size: cover;         /* Cubre todo el área */
+            background-position: center;    /* Centrada */
+        }
+
+        /* Párrafos del bloque de texto "Nosotros" */
+        .about-text p {
+            color: #999;                    /* Gris medio */
+
+            line-height: 1.8;               /* Buen espacio entre líneas */
+
+            margin-bottom: 20px;
+        }
+
+        /* Lista de beneficios */
+        .about-list {
+            list-style: none;               /* Sin viñetas por defecto */
+
+            margin: 25px 0;
+        }
+
+        /* Cada item de la lista */
+        .about-list li {
+            margin-bottom: 15px;
+
+            color: #ddd;                    /* Gris claro */
+        }
+
+        /* ::before crea un elemento visual ANTES de cada <li> */
+        .about-list li::before {
+            content: "✓";                   /* Inserta el símbolo check */
+
+            color: var(--gold);             /* En color dorado */
+
+            font-weight: bold;
+
+            margin-right: 10px;             /* Separación entre check y texto */
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        /* Sección de llamado a la acción con imagen de fondo */
+        .cta {
+            margin: 0 20px;                 /* Márgenes laterales */
+
+            background:
+                linear-gradient(            /* Degradado oscuro sobre la imagen */
+                    90deg,
+                    rgba(0,0,0,.9),
+                    rgba(0,0,0,.5)
+                ),
+
+                url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+
+            min-height: 450px;              /* Alto mínimo */
+
+            display: flex;                  /* Flexbox para centrar el contenido */
+            align-items: center;            /* Centra verticalmente */
+        }
+
+        /* Contenido interno del CTA */
+        .cta-content {
+            max-width: 1250px;
+            width: 100%;
+
+            margin: auto;
+        }
+
+        /* Título del CTA */
+        .cta h2 {
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: clamp(35px,5vw,65px); /* Tamaño responsive */
+
+            max-width: 700px;
+
+            margin-bottom: 20px;
+        }
+
+        /* Párrafo del CTA */
+        .cta p {
+            color: #ccc;
+
+            max-width: 600px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        /* Cuadrícula de las tarjetas de contacto */
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+
+            gap: 30px;
+        }
+
+        /* Cada tarjeta de contacto */
+        .contact-card {
+            background: #111;
+
+            border: 1px solid #222;
+
+            padding: 35px;
+        }
+
+        /* Título dentro de la tarjeta de contacto */
+        .contact-card h3 {
+            font-family: 'Montserrat', sans-serif;
+
+            margin-bottom: 20px;
+        }
+
+        /* Cada línea con un dato (ícono + texto) */
+        .contact-item {
+            display: flex;                  /* Ícono y texto en fila */
+
+            gap: 15px;                      /* Separación entre ellos */
+
+            padding: 15px 0;                /* Espacio interno arriba/abajo */
+
+            border-bottom: 1px solid #222;  /* Línea divisoria */
+
+            color: #999;                    /* Gris */
+        }
+
+        /* El <strong> dentro (títulos como "Ubicación", "WhatsApp") */
+        .contact-item strong {
+            color: white;                   /* En blanco para destacar */
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        /* Pie de página */
+        footer {
+            background: #050505;            /* Fondo muy oscuro */
+
+            padding: 50px 20px;
+
+            border-top: 1px solid #222;     /* Línea divisoria arriba */
+        }
+
+        /* Contenedor interno del footer */
+        .footer-container {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: flex;                  /* Flexbox para distribuir */
+
+            justify-content: space-between; /* Un elemento a la izquierda, otro a la derecha */
+
+            gap: 30px;
+
+            flex-wrap: wrap;                /* Salta de línea en pantallas pequeñas */
+        }
+
+        /* Logo del footer */
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        /* Punto del logo del footer */
+        .footer-logo span {
+            color: var(--gold);             /* Dorado */
+        }
+
+        /* Texto descriptivo bajo el logo */
+        .footer-text {
+            color: #666;                    /* Gris oscuro */
+
+            font-size: 13px;
+
+            margin-top: 10px;
+        }
+
+        /* Texto de derechos reservados */
+        .copyright {
+            color: #555;                    /* Gris muy tenue */
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================== */
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp {
+            position: fixed;                /* Se queda fijo aunque haya scroll */
+
+            right: 25px;                    /* A 25px del borde derecho */
+            bottom: 25px;                   /* A 25px del borde inferior */
+
+            width: 60px;
+            height: 60px;
+
+            background: #25D366;            /* Verde oficial de WhatsApp */
+
+            border-radius: 50%;             /* Forma circular perfecta */
+
+            display: flex;                  /* Flexbox para centrar el emoji */
+            align-items: center;            /* Centrado vertical */
+            justify-content: center;        /* Centrado horizontal */
+
+            font-size: 28px;                /* Tamaño del emoji */
+
+            text-decoration: none;
+
+            z-index: 999;                   /* Se muestra por encima del contenido */
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.4); /* Sombra suave debajo */
+
+            transition: .3s;
+        }
+
+        /* Efecto al pasar el mouse por el botón de WhatsApp */
+        .whatsapp:hover {
+            transform: scale(1.1);          /* Crece un 10% */
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        /* Estilos que SOLO se aplican cuando la pantalla mide 900px o menos (tablets) */
+        @media(max-width: 900px) {
+
+            /* Oculta el menú de navegación en pantallas pequeñas */
+            .nav-links {
+                display: none;
+            }
+
+            /* Los vehículos pasan de 3 columnas a 2 */
+            .vehicles {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            /* Los servicios pasan de 3 columnas a 2 */
+            .services-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            /* El bloque "Nosotros" pasa de 2 columnas a 1 (apilado) */
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            /* La imagen de "Nosotros" reduce su altura */
+            .about-image {
+                height: 400px;
+            }
+
+            /* Las estadísticas pasan de 4 columnas a 2 */
+            .stats-container {
+                grid-template-columns: repeat(2,1fr);
+                gap: 25px;
+            }
+
+            /* Se quita el borde divisorio de cada estadística */
+            .stat {
+                border: none;
+            }
+
+        }
+
+        /* Estilos que SOLO se aplican en pantallas de 600px o menos (móviles) */
+        @media(max-width: 600px) {
+
+            /* Vehículos, servicios y contacto pasan a UNA sola columna */
+            .vehicles,
+            .services-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* El título del hero se reduce a un tamaño fijo más pequeño */
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            /* Reduce el tamaño del párrafo del hero */
+            .hero p {
+                font-size: 15px;
+            }
+
+            /* Reduce el padding vertical de las secciones */
+            section {
+                padding: 70px 20px;
+            }
+
+            /* Las estadísticas siguen en 2 columnas */
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            /* El CTA se pega a los bordes en móvil */
+            .cta {
+                margin: 0;
+            }
+
+        }
+

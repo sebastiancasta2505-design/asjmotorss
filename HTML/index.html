@@ -1,0 +1,751 @@
+<!DOCTYPE html> <!-- Le dice al navegador que este documento usa HTML5 -->
+<html lang="es"> <!-- Etiqueta raíz del documento. lang="es" indica que el contenido está en español -->
+<head> <!-- Contiene información invisible para el usuario: metadatos, título, fuentes, CSS -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres (permite acentos y ñ) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el sitio sea responsive (se adapta a móviles) -->
+
+    <title>ASJ Motors | Compra, Venta y Permuta</title> <!-- Texto que aparece en la pestaña del navegador -->
+
+    <meta name="description"
+        content="ASJ Motors - Vehículos seleccionados, compra, venta y permuta de carros y motos."> <!-- Descripción para buscadores (SEO) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Optimización: se conecta con Google Fonts antes de descargar -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Optimización: se conecta con el servidor de fuentes -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"> <!-- Enlaza las fuentes Inter y Montserrat desde Google Fonts -->
+        <link rel="stylesheet" href="../CSS/style.css"> <!-- Enlaza la hoja de estilos externa style.css -->
+
+    
+</head>
+
+<body> <!-- Contiene todo el contenido visible de la página -->
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header> <!-- Cabecera superior de la página -->
+
+        <nav> <!-- Contenedor del menú de navegación -->
+
+            <div class="logo"> <!-- Contenedor genérico para el logo -->
+                ASJ<span>.</span>MOTORS <!-- span: envuelve el punto para darle estilo diferente -->
+            </div>
+
+            <ul class="nav-links"> <!-- Lista no ordenada que contiene los enlaces del menú -->
+
+                <li> <!-- Elemento de lista (cada opción del menú) -->
+                    <a href="#inicio">Inicio</a> <!-- Enlace interno que lleva a la sección con id="inicio" -->
+                </li>
+
+                <li>
+                    <a href="#vehiculos">Vehículos</a> <!-- Enlace a la sección de vehículos -->
+                </li>
+
+                <li>
+                    <a href="#servicios">Servicios</a> <!-- Enlace a la sección de servicios -->
+                </li>
+
+                <li>
+                    <a href="#nosotros">Nosotros</a> <!-- Enlace a la sección "nosotros" -->
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a> <!-- Enlace a la sección de contacto -->
+                </li>
+
+                <li>
+                    <a class="nav-button" href="#vehiculos"> <!-- Enlace con estilo de botón -->
+                        VER VEHÍCULOS
+                    </a>
+                </li>
+
+                <li>
+                    <a class = "nav-button" href="#motos">
+                        
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main> <!-- Contenido principal de la página (solo debe haber uno) -->
+
+        <section class="hero" id="inicio"> <!-- Sección principal (hero). id="inicio" es el destino del ancla del menú -->
+
+            <div class="hero-content"> <!-- Contenedor del contenido del hero -->
+
+                <div class="hero-small"> <!-- Contenedor para el texto pequeño superior -->
+                    ASJ MOTORS
+                </div>
+
+                <h1> <!-- Título principal de la página (solo debe haber uno) -->
+                    TU PRÓXIMO
+                    <span>VEHÍCULO</span> <!-- span: resalta la palabra "VEHÍCULO" con estilo distinto -->
+                    COMIENZA AQUÍ.
+                </h1>
+
+                <p> <!-- Párrafo de texto descriptivo -->
+                    Encuentra carros y motos seleccionados,
+                    con opciones de compra, venta y permuta.
+                    En ASJ Motors hacemos que cambiar de vehículo
+                    sea una experiencia diferente.
+                </p>
+
+                <div class="hero-buttons"> <!-- Contenedor para agrupar los botones del hero -->
+
+                    <a href="#vehiculos" class="btn btn-gold"> <!-- Enlace con estilo de botón dorado -->
+                        VER VEHÍCULOS
+                    </a>
+
+                    <a href="#contacto" class="btn btn-outline"> <!-- Enlace con estilo de botón con borde -->
+                        CONTACTARNOS
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================== -->
+
+        <div class="stats"> <!-- Contenedor principal de las estadísticas -->
+
+            <div class="stats-container"> <!-- Contenedor interno para alinear las cifras -->
+
+                <div class="stat"> <!-- Cada bloque de estadística -->
+                    <h3>+100</h3> <!-- Subtítulo con el número destacado -->
+                    <p>Vehículos vendidos</p> <!-- Descripción del número -->
+                </div>
+
+                <div class="stat">
+                    <h3>+5</h3>
+                    <p>Años de experiencia</p>
+                </div>
+
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Compromiso</p>
+                </div>
+
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Atención digital</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             VEHÍCULOS
+        ========================== -->
+
+        <section id="vehiculos"> <!-- Sección de vehículos. id="vehiculos" es el destino del ancla -->
+
+            <div class="container"> <!-- Contenedor que centra y limita el ancho del contenido -->
+
+                <div class="section-header"> <!-- Encabezado de la sección (etiqueta + título + descripción) -->
+
+                    <div class="section-tag"> <!-- Etiqueta pequeña sobre el título -->
+                        Nuestro inventario
+                    </div>
+
+                    <h2 class="section-title"> <!-- Título de la sección -->
+                        Vehículos destacados
+                    </h2>
+
+                    <p class="section-description"> <!-- Descripción de la sección -->
+                        Explora algunos de nuestros vehículos disponibles.
+                        Encuentra el que se adapte a tu estilo y presupuesto.
+                    </p>
+
+                </div>
+
+
+                <div class="filters"> <!-- Contenedor de los botones de filtro -->
+
+                    <button class="filter active" onclick="filtrar('todos')"> <!-- Botón que ejecuta la función JS filtrar('todos') -->
+                        Todos
+                    </button>
+
+                    <button class="filter" onclick="filtrar('carros')"> <!-- Botón que filtra por carros -->
+                        Carros
+                    </button>
+
+                    <button class="filter" onclick="filtrar('motos')"> <!-- Botón que filtra por motos -->
+                        Motos
+                    </button>
+
+                </div>
+
+
+                <div class="vehicles"> <!-- Contenedor de todas las tarjetas de vehículos -->
+
+
+                    <!-- VEHÍCULO 1 -->
+
+                    <article class="vehicle" data-tipo="carros"> <!-- article: contenido independiente. data-tipo lo usa el JS para filtrar -->
+
+                        <div class="vehicle-image"> <!-- Contenedor de la imagen del vehículo -->
+
+                            <img
+                                src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85"
+                                alt="Vehículo ASJ Motors"
+                            > <!-- img: muestra imagen. src=URL, alt=texto alternativo para accesibilidad y SEO -->
+
+                            <div class="vehicle-tag"> <!-- Etiqueta flotante sobre la imagen -->
+                                Destacado
+                            </div>
+
+                        </div>
+
+                        <div class="vehicle-info"> <!-- Contenedor de la información del vehículo -->
+
+                            <h3>BMW Serie 3</h3> <!-- Nombre del vehículo -->
+
+                            <div class="vehicle-details"> <!-- Detalles técnicos del vehículo -->
+                                <span>2023</span> <!-- span: fragmento de texto en línea -->
+                                <span>Automático</span>
+                                <span>Gasolina</span>
+                            </div>
+
+                            <div class="vehicle-price"> <!-- Contenedor del precio -->
+                                $189.900.000
+                            </div>
+
+                            <a
+                                href="https://wa.me/573000000000?text=Hola%20ASJ%20Motors,%20estoy%20interesado%20en%20el%20BMW%20Serie%203"
+                                class="vehicle-button"
+                                target="_blank"
+                            > <!-- Enlace a WhatsApp. target="_blank" abre en una pestaña nueva -->
+                                ME INTERESA
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- VEHÍCULO 2 -->
+
+                    <article class="vehicle" data-tipo="carros"> <!-- Segundo vehículo (tipo: carro) -->
+
+                        <div class="vehicle-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=1000&q=85"
+                                alt="Vehículo ASJ Motors"
+                            >
+
+                            <div class="vehicle-tag">
+                                Disponible
+                            </div>
+
+                        </div>
+
+                        <div class="vehicle-info">
+
+                            <h3>Porsche 911</h3>
+
+                            <div class="vehicle-details">
+                                <span>2022</span>
+                                <span>Automático</span>
+                                <span>Gasolina</span>
+                            </div>
+
+                            <div class="vehicle-price">
+                                $499.900.000
+                            </div>
+
+                            <a
+                                href="https://wa.me/573000000000?text=Hola%20ASJ%20Motors,%20estoy%20interesado%20en%20el%20Porsche%20911"
+                                class="vehicle-button"
+                                target="_blank"
+                            >
+                                ME INTERESA
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- VEHÍCULO 3 -->
+
+                    <article class="vehicle" data-tipo="motos"> <!-- Tercer vehículo (tipo: moto) -->
+
+                        <div class="vehicle-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
+                                alt="Moto ASJ Motors"
+                            >
+
+                            <div class="vehicle-tag">
+                                Nueva
+                            </div>
+
+                        </div>
+
+                        <div class="vehicle-info">
+
+                            <h3>Motocicleta Premium</h3>
+
+                            <div class="vehicle-details">
+                                <span>2025</span>
+                                <span>6 velocidades</span>
+                                <span>Gasolina</span>
+                            </div>
+
+                            <div class="vehicle-price">
+                                $48.900.000
+                            </div>
+
+                            <a
+                                href="https://wa.me/573000000000?text=Hola%20ASJ%20Motors,%20estoy%20interesado%20en%20la%20moto"
+                                class="vehicle-button"
+                                target="_blank"
+                            >
+                                ME INTERESA
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICIOS
+        ========================== -->
+
+        <section class="services" id="servicios"> <!-- Sección de servicios. id="servicios" es el destino del ancla -->
+
+            <div class="container"> <!-- Contenedor que limita y centra el ancho -->
+
+                <div class="section-header"> <!-- Encabezado de la sección -->
+
+                    <div class="section-tag"> <!-- Etiqueta pequeña sobre el título -->
+                        Lo que hacemos
+                    </div>
+
+                    <h2 class="section-title"> <!-- Título de la sección -->
+                        Mucho más que vender vehículos.
+                    </h2>
+
+                </div>
+
+
+                <div class="services-grid"> <!-- Cuadrícula que organiza las tarjetas de servicios -->
+
+
+                    <div class="service"> <!-- Cada tarjeta de servicio -->
+
+                        <div class="service-icon"> <!-- Contenedor del ícono (emoji) -->
+                            🚘
+                        </div>
+
+                        <h3>Compra de vehículos</h3> <!-- Título del servicio -->
+
+                        <p> <!-- Descripción del servicio -->
+                            ¿Quieres vender tu carro o moto?
+                            Evaluamos tu vehículo y te ayudamos
+                            a encontrar una negociación conveniente.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon">
+                            🔄
+                        </div>
+
+                        <h3>Permutas</h3>
+
+                        <p>
+                            Cambia tu vehículo actual por uno que
+                            se adapte mejor a tus necesidades.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon">
+                            💳
+                        </div>
+
+                        <h3>Financiación</h3>
+
+                        <p>
+                            Encuentra alternativas de financiación
+                            para hacer realidad la compra de tu
+                            próximo vehículo.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon">
+                            🔍
+                        </div>
+
+                        <h3>Búsqueda de vehículos</h3>
+
+                        <p>
+                            ¿Buscas un vehículo específico?
+                            Podemos ayudarte a encontrarlo.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon">
+                            🛡️
+                        </div>
+
+                        <h3>Compra segura</h3>
+
+                        <p>
+                            Te acompañamos durante el proceso para
+                            que puedas comprar con mayor tranquilidad.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <div class="service-icon">
+                            🤝
+                        </div>
+
+                        <h3>Asesoría personalizada</h3>
+
+                        <p>
+                            Nuestro objetivo es ayudarte a encontrar
+                            una opción acorde a tus necesidades.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NOSOTROS
+        ========================== -->
+
+        <section id="nosotros"> <!-- Sección "Nosotros". id="nosotros" es el destino del ancla -->
+
+            <div class="container"> <!-- Contenedor que centra y limita el ancho -->
+
+                <div class="about"> <!-- Contenedor del bloque "sobre nosotros" -->
+
+                    <div class="about-image"></div> <!-- div vacío usado como contenedor para una imagen de fondo (CSS) -->
+
+                    <div class="about-text"> <!-- Contenedor del texto de "sobre nosotros" -->
+
+                        <div class="section-tag"> <!-- Etiqueta pequeña sobre el título -->
+                            Sobre ASJ Motors
+                        </div>
+
+                        <h2 class="section-title"> <!-- Título de la sección -->
+                            Conduce lo que realmente quieres.
+                        </h2>
+
+                        <p> <!-- Primer párrafo descriptivo -->
+                            En ASJ Motors creemos que comprar un
+                            vehículo debe ser una experiencia sencilla,
+                            transparente y emocionante.
+                        </p>
+
+                        <p> <!-- Segundo párrafo descriptivo -->
+                            Seleccionamos diferentes opciones de carros
+                            y motos para ayudarte a encontrar un vehículo
+                            que realmente se adapte a tu estilo de vida.
+                        </p>
+
+                        <ul class="about-list"> <!-- Lista de beneficios -->
+
+                            <li> <!-- Cada beneficio -->
+                                Atención personalizada
+                            </li>
+
+                            <li>
+                                Vehículos seleccionados
+                            </li>
+
+                            <li>
+                                Compra, venta y permuta
+                            </li>
+
+                            <li>
+                                Acompañamiento durante el proceso
+                            </li>
+
+                        </ul>
+
+                        <a href="#contacto" class="btn btn-gold"> <!-- Enlace con estilo de botón que lleva a Contacto -->
+                            HABLAR CON UN ASESOR
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta"> <!-- Sección CTA (llamado a la acción) -->
+
+            <div class="cta-content"> <!-- Contenedor del contenido del CTA -->
+
+                <div class="section-tag"> <!-- Etiqueta pequeña -->
+                    ASJ MOTORS
+                </div>
+
+                <h2> <!-- Título grande del CTA -->
+                    ¿Listo para encontrar tu próximo vehículo?
+                </h2>
+
+                <p> <!-- Descripción del CTA -->
+                    Escríbenos y cuéntanos qué estás buscando.
+                    Nuestro equipo te ayudará a encontrar la mejor opción.
+                </p>
+
+                <a
+                    href="https://wa.me/573000000000"
+                    target="_blank"
+                    class="btn btn-gold"
+                > <!-- Enlace a WhatsApp con estilo de botón dorado, abre en pestaña nueva -->
+                    HABLAR POR WHATSAPP
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACTO
+        ========================== -->
+
+        <section id="contacto"> <!-- Sección de contacto. id="contacto" es el destino del ancla -->
+
+            <div class="container"> <!-- Contenedor que limita el ancho -->
+
+                <div class="section-header"> <!-- Encabezado de la sección -->
+
+                    <div class="section-tag"> <!-- Etiqueta pequeña -->
+                        Contáctanos
+                    </div>
+
+                    <h2 class="section-title"> <!-- Título de la sección -->
+                        Hablemos de tu próximo vehículo.
+                    </h2>
+
+                </div>
+
+
+                <div class="contact-grid"> <!-- Cuadrícula que organiza las tarjetas de contacto -->
+
+                    <div class="contact-card"> <!-- Primera tarjeta: información de contacto -->
+
+                        <h3> <!-- Título de la tarjeta -->
+                            Información
+                        </h3>
+
+                        <div class="contact-item"> <!-- Cada bloque con un dato de contacto -->
+                            📍
+                            <span> <!-- span: envuelve el texto para agruparlo -->
+                                <strong>Ubicación</strong><br> <!-- strong: texto en negrita (importante). br: salto de línea -->
+                                Manizales, Caldas
+                            </span>
+                        </div>
+
+                        <div class="contact-item">
+                            📱
+                            <span>
+                                <strong>WhatsApp</strong><br>
+                                +57 304 142 0972
+                            </span>
+                        </div>
+
+                        <div class="contact-item">
+                            📧
+                            <span>
+                                <strong>Email</strong><br>
+                                asjcol222@gmail.com     +
+                                ffffff
+                            </span>
+                        </div>
+
+                        <div class="contact-item">
+                            🕐
+                            <span>
+                                <strong>Horario</strong><br>
+                                Lunes - Sábado
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-card"> <!-- Segunda tarjeta: botón hacia WhatsApp -->
+
+                        <h3> <!-- Título de la tarjeta -->
+                            ¿Qué estás buscando?
+                        </h3>
+
+                        <p style="color:#888;line-height:1.7;margin-bottom:25px;"> <!-- Párrafo con estilo en línea (CSS directo) -->
+
+                            Escríbenos directamente por WhatsApp
+                            y cuéntanos qué vehículo estás buscando.
+
+                        </p>
+
+                        <a
+                            href="https://wa.me/573000000000"
+                            target="_blank"
+                            class="btn btn-gold"
+                        > <!-- Enlace a WhatsApp con estilo de botón dorado -->
+                            ESCRIBIR POR WHATSAPP
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer> <!-- Pie de página -->
+
+        <div class="footer-container"> <!-- Contenedor principal del footer -->
+
+            <div> <!-- Contenedor para el logo y texto del footer -->
+
+                <div class="footer-logo"> <!-- Logo del footer -->
+                    ASJ<span>.</span>MOTORS <!-- span: da estilo especial al punto -->
+                </div>
+
+                <div class="footer-text"> <!-- Texto descriptivo del footer -->
+                    Compra · Venta · Permuta
+                </div>
+
+            </div>
+
+            <div class="copyright"> <!-- Texto de copyright -->
+                © 2026 ASJ Motors. Todos los derechos reservados.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- WHATSAPP -->
+
+    <a
+        href="https://wa.me/573000000000"
+        target="_blank"
+        class="whatsapp"
+        aria-label="WhatsApp"
+    > <!-- Botón flotante de WhatsApp. aria-label describe el enlace para lectores de pantalla (accesibilidad) -->
+        💬
+    </a>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script> <!-- Contiene el código JavaScript de la página -->
+
+        function filtrar(tipo) {
+
+            const vehiculos =
+                document.querySelectorAll('.vehicle');
+
+            const botones =
+                document.querySelectorAll('.filter');
+
+
+            botones.forEach(boton => {
+                boton.classList.remove('active');
+            });
+
+
+            event.target.classList.add('active');
+
+
+            vehiculos.forEach(vehiculo => {
+
+                if (
+                    tipo === 'todos' ||
+                    vehiculo.dataset.tipo === tipo
+                ) {
+
+                    vehiculo.style.display = 'block';
+
+                } else {
+
+                    vehiculo.style.display = 'none';
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
